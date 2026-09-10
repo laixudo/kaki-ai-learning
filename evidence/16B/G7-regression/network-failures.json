@@ -1,0 +1,15 @@
+{
+  "unexpected_first_party_failures": [],
+  "expected_blockers": [
+    {
+      "capability": "cloud_video",
+      "code": "BLOCKED_BY_SECRET",
+      "reason": "Credentials supplied in chat were treated as exposed and were not used."
+    },
+    {
+      "capability": "voice_microphone",
+      "code": "BLOCKED_BY_BROWSER_MEDIA",
+      "reason": "The in-app browser did not grant microphone capture; reauthorize and text fallback remained available."
+    }
+  ]
+}

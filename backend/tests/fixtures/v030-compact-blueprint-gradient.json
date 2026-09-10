@@ -1,0 +1,108 @@
+{
+  "status": "ready",
+  "clarification": null,
+  "blueprint": {
+    "blueprint_version": "0.3",
+    "topic": "梯度下降为什么沿负梯度更新",
+    "specific_confusion": "用户知道梯度指向增长最快方向，但不理解最小化时为何取反方向",
+    "domain": "math",
+    "preview_theme": "负梯度为何让目标函数下降",
+    "goals": {
+      "understand": "理解梯度方向与局部函数变化的关系",
+      "distinguish": "辨析增长最快方向和最小化更新方向",
+      "transfer": "把负梯度原则用于新的优化情境"
+    },
+    "source_grounding": [],
+    "core_concept": {
+      "name": "负梯度更新",
+      "explanation": "梯度给出局部增长最快方向，因此沿负梯度的小步更新会使一阶近似中的函数值下降。",
+      "applicability": "适用于可微目标函数的局部小步优化，并需要结合步长判断。"
+    },
+    "misconception": {
+      "mistaken_claim": "梯度指向增长最快方向，所以梯度下降也应沿梯度方向更新。",
+      "correction": "梯度描述增长方向，而最小化目标要求沿其反方向更新。",
+      "diagnostic_cue": "回答把函数变化方向和参数更新目标混为一谈。"
+    },
+    "worked_example": {
+      "scenario": "在二维碗形函数的一点比较沿梯度和沿负梯度移动后的局部变化。",
+      "steps": [
+        "写出沿单位方向的一阶变化近似",
+        "比较梯度方向与负梯度方向对应的符号"
+      ],
+      "conclusion": "负梯度方向使一阶变化为负，因此小步移动会降低目标函数。"
+    },
+    "tasks": {
+      "understanding_trial": {
+        "kind": "short_answer",
+        "interaction_kind": "explain",
+        "question": "用方向导数解释为什么梯度指向局部增长最快方向。",
+        "hint": "比较单位向量与梯度的点积。",
+        "options": null,
+        "correct_option": null,
+        "accepted_groups": [["方向导数", "点积"], ["同向", "最大"]],
+        "rationale": "单位方向上的方向导数等于梯度与单位向量的点积，同向时点积最大。"
+      },
+      "distinction_trial": {
+        "kind": "multiple_choice",
+        "interaction_kind": "compare",
+        "question": "最小化目标函数时，局部小步更新最应选择哪个方向？",
+        "hint": "先判断哪个方向会让一阶变化为负。",
+        "options": ["负梯度方向", "正梯度方向", "任意垂直方向"],
+        "correct_option": 0,
+        "accepted_groups": null,
+        "rationale": "负梯度方向与梯度点积为负，因此在一阶近似下使函数值下降。"
+      },
+      "remedy": {
+        "kind": "multiple_choice",
+        "interaction_kind": "step_completion",
+        "question": "已知梯度表示增长最快方向，补全最小化更新的下一步判断。",
+        "hint": "最小化需要选择使变化量为负的方向。",
+        "options": ["取梯度的反方向", "继续沿梯度方向", "忽略方向只增大步长"],
+        "correct_option": 0,
+        "accepted_groups": null,
+        "rationale": "优化目标是减小函数值，所以应把增长方向反转，而不是放大正向变化。"
+      },
+      "transfer_interleave": {
+        "kind": "short_answer",
+        "interaction_kind": "application",
+        "question": "对一个新的可微损失函数，说明如何确定一次局部下降更新方向。",
+        "hint": "先求局部梯度，再结合最小化目标。",
+        "options": null,
+        "correct_option": null,
+        "accepted_groups": [["梯度", "偏导"], ["负号", "反方向"], ["步长", "小步"]],
+        "rationale": "新情境中仍需先求梯度，再沿负梯度以合适步长更新并检查损失变化。"
+      },
+      "boss_understand": {
+        "kind": "short_answer",
+        "interaction_kind": "explain",
+        "question": "向同伴解释梯度、方向导数和局部增长最快之间的关系。",
+        "hint": "组织成公式关系和最大值条件。",
+        "options": null,
+        "correct_option": null,
+        "accepted_groups": [["方向导数", "点积"], ["单位方向"], ["同向", "最大"]],
+        "rationale": "完整解释需要把方向导数公式与单位向量同向时点积最大联系起来。"
+      },
+      "boss_distinguish": {
+        "kind": "multiple_choice",
+        "interaction_kind": "counterexample",
+        "question": "下面哪项最能反驳“沿梯度方向会让目标函数下降”？",
+        "hint": "比较沿梯度方向的一阶变化符号。",
+        "options": ["沿梯度方向的一阶变化为正", "梯度可能有多个分量", "目标函数可以画成曲线"],
+        "correct_option": 0,
+        "accepted_groups": null,
+        "rationale": "沿梯度方向的一阶变化等于梯度范数平方并为正，直接否定下降结论。"
+      },
+      "boss_transfer": {
+        "kind": "short_answer",
+        "interaction_kind": "application",
+        "question": "在步长过大的新情境中，解释为何沿负梯度也可能没有下降。",
+        "hint": "区分方向正确和步长合适。",
+        "options": null,
+        "correct_option": null,
+        "accepted_groups": [["步长", "过大"], ["局部", "一阶近似"], ["越过", "反弹"]],
+        "rationale": "负梯度保证的是局部小步的一阶下降趋势，步长过大可能越出有效局部范围。"
+      }
+    },
+    "follow_up_recommendation": "用一个二维函数画出梯度和负梯度，并比较不同步长的更新结果。"
+  }
+}

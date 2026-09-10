@@ -1,0 +1,12 @@
+Runtime verification on 2026-08-16 (Asia/Shanghai)
+
+Frontend: http://127.0.0.1:5174 -> 200
+Backend: http://127.0.0.1:8001/api/health -> 200
+AI Workspace: http://127.0.0.1:5174/ai-learning -> 200
+Database: connected
+Provider config: production / deepseek
+Cloud video health: blocked / BLOCKED_BY_SECRET / keys_rotated=false
+Cloud video port 8003: unused
+Fresh six-route console errors: 0
+Backend error log: empty after final restart
+Frontend error log: empty after final restart

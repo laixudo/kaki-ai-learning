@@ -1,0 +1,41 @@
+{
+  "package_name": "KAKI-COMPLETE-PROGRAM-TEAM-HANDOFF-20260817",
+  "created_at": "2026-08-17T12:11:00+08:00",
+  "source_root": "C:\\Users\\wuzbo\\KAKI-WINDOWS-FINAL\\project",
+  "package_root": "KAKI-WINDOWS-FINAL",
+  "program_files_before_manifest": 1103,
+  "program_bytes_before_manifest": 258865923,
+  "api_modified_by_packaging": false,
+  "local_env_modified_by_packaging": false,
+  "included": [
+    "backend source and tests",
+    "frontend source, public assets, dist, lockfile and tests",
+    "startup and diagnostic scripts",
+    "docs and design specifications",
+    "Task16B evidence",
+    "TEAMMATE_HANDOFF"
+  ],
+  "excluded": [
+    "real .env and credentials",
+    "backend databases",
+    "user uploads and avatars",
+    "locally generated videos",
+    "node_modules",
+    "Python virtual environment",
+    "runtime logs and process IDs",
+    "test and interpreter caches",
+    "superseded historical evidence media"
+  ],
+  "source_archives": {
+    "KAKI-CODEX-RC-HANDOFF-PACK.zip": "502F1F4CC958FA3BFE2445BC064B16ABE954CDC52F23F45C6111A0B26FE7693F",
+    "cloud_video_module.zip": "A7E386CC577AA94B1B6FFF6BE478E07E627EE7E43C914813B8FED588455B0FCC"
+  },
+  "last_verified": {
+    "backend": "290 passed, 6 skipped",
+    "frontend_build": "pass",
+    "focused_lint": "pass",
+    "health_check": "pass",
+    "smoke_test": "pass"
+  },
+  "blockers": ["BLOCKED_BY_SECRET", "BLOCKED_BY_BROWSER_MEDIA"]
+}

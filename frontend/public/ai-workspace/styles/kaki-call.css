@@ -1,0 +1,57 @@
+/* KAKI_AVATAR_RUNTIME_V3_ANIMATABLE_ASSET + unified voice call presentation.
+   Brain-accepted component asset runtime only; standalone demo chrome is intentionally excluded. */
+.digital-tutor-sprite{background:none!important;filter:none!important;display:block;overflow:visible}
+.digital-tutor-stage[data-renderer="animatable_asset_canvas"] .digital-tutor-portrait{overflow:visible;background:linear-gradient(160deg,#fff4e7,#f9e8d5)}
+.kaki-live2d-canvas,.kaki-animatable-avatar-canvas{display:block;width:100%;height:100%;background:transparent;pointer-events:none;object-fit:contain}
+.kaki-live2d-unavailable{width:100%;height:100%;display:grid;place-items:center;align-content:center;gap:7px;padding:10px;text-align:center;color:#705646;background:linear-gradient(160deg,#fff8ef,#f3e5d4)}
+.kaki-live2d-unavailable-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#d97243;color:#fff;font-weight:800;box-shadow:0 8px 18px rgba(109,62,34,.16)}
+.kaki-live2d-unavailable-copy{display:grid;gap:2px}.kaki-live2d-unavailable-copy strong{font-size:11px}.kaki-live2d-unavailable-copy small{font-size:9px;line-height:1.35;color:#8d7768}
+.voice-call-shell{position:absolute;z-index:1200;inset:60px 10px 10px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;border:1px solid #ddc4aa;border-radius:22px;background:linear-gradient(150deg,#fffdf9 0%,#fff7ed 52%,#f7eadb 100%);box-shadow:0 22px 64px rgba(73,46,27,.2);overflow:hidden;color:#403127}
+.voice-call-shell[hidden]{display:none}
+.voice-call-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid rgba(202,165,133,.42);background:rgba(255,253,249,.82);backdrop-filter:blur(10px)}
+.voice-call-head-copy{display:grid;gap:2px}.voice-call-head-copy strong{font-size:15px}.voice-call-head-copy small{color:#876f60;font-size:11px}
+.voice-call-controls{display:flex;align-items:center;gap:6px}.voice-call-controls button{padding:7px 10px;border-color:#dfcbb8;background:#fffaf4;color:#6b4936}.voice-call-controls .voice-call-end{border-color:#cf8067;color:#9b412c}
+.voice-call-body{min-height:0;display:grid;grid-template-columns:1fr;position:relative;padding:18px;overflow:hidden;transition:grid-template-columns .36s cubic-bezier(.2,.8,.2,1)}
+.voice-call-shell[data-teaching="true"] .voice-call-body{grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr);gap:18px}
+.voice-call-board{min-width:0;min-height:0;display:none;overflow:auto;padding:16px;border:1px solid #d9c4ae;border-radius:18px;background:linear-gradient(160deg,#fffdf7,#f6efe3);box-shadow:inset 0 0 0 1px rgba(255,255,255,.68)}
+.voice-call-shell[data-teaching="true"] .voice-call-board{display:block;animation:kakiBoardEnter .36s cubic-bezier(.2,.8,.2,1) both}
+.voice-call-avatar-zone{min-width:0;display:grid;place-items:center;align-content:center;gap:14px;transition:transform .36s cubic-bezier(.2,.8,.2,1)}
+.voice-call-avatar{width:min(34vw,300px);aspect-ratio:1/1.08;transition:width .36s cubic-bezier(.2,.8,.2,1),transform .36s cubic-bezier(.2,.8,.2,1)}
+.voice-call-shell[data-teaching="true"] .voice-call-avatar{width:min(25vw,245px);transform:translateX(2px)}
+.voice-call-avatar .kaki-live2d-canvas,.voice-call-avatar .kaki-animatable-avatar-canvas,.voice-call-avatar .kaki-live2d-unavailable{width:100%;height:100%}
+/* 数字人收口：通话中的柿小吉 = 正面固定形象 + 轻量反馈 */
+.voice-call-avatar{display:grid;place-items:center}
+.voice-call-avatar-image{width:100%;height:100%;object-fit:contain;pointer-events:none;filter:drop-shadow(0 14px 22px rgba(122,66,32,.22));animation:kakiAvatarBreathe 3.8s ease-in-out infinite;transition:filter .3s ease,transform .3s ease,opacity .3s ease}
+.voice-call-avatar[data-avatar-state="listening"] .voice-call-avatar-image{animation:kakiAvatarBreathe 3.8s ease-in-out infinite,kakiAvatarListenGlow 1.6s ease-in-out infinite}
+.voice-call-avatar[data-avatar-state="thinking"] .voice-call-avatar-image{animation:kakiAvatarThink 1.8s ease-in-out infinite}
+.voice-call-avatar[data-avatar-state="speaking"] .voice-call-avatar-image{animation:kakiAvatarSpeak .72s ease-in-out infinite}
+.voice-call-avatar[data-avatar-state="teaching"] .voice-call-avatar-image{animation:kakiAvatarSpeak .9s ease-in-out infinite;filter:drop-shadow(0 14px 22px rgba(122,66,32,.22)) drop-shadow(0 0 18px rgba(226,124,62,.34))}
+.voice-call-avatar[data-avatar-state="interrupted"] .voice-call-avatar-image{animation:none;opacity:.88}
+@keyframes kakiAvatarBreathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.012)}}
+@keyframes kakiAvatarListenGlow{0%,100%{filter:drop-shadow(0 14px 22px rgba(122,66,32,.22)) drop-shadow(0 0 0 rgba(226,124,62,0))}50%{filter:drop-shadow(0 14px 22px rgba(122,66,32,.22)) drop-shadow(0 0 16px rgba(226,124,62,.4))}}
+@keyframes kakiAvatarThink{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(1.6deg)}}
+@keyframes kakiAvatarSpeak{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.028)}}
+.voice-call-bubble{width:min(560px,82vw);min-height:76px;max-height:150px;overflow:auto;padding:12px 14px;border:1px solid #e4d0bb;border-radius:16px;background:rgba(255,255,255,.88);box-shadow:0 10px 30px rgba(96,59,34,.08);font-size:clamp(13px,1.2vw,15px);line-height:1.65;color:#514238}
+.voice-call-shell[data-teaching="true"] .voice-call-bubble{width:min(310px,28vw)}
+.voice-call-state{display:inline-flex;align-items:center;gap:7px;padding:4px 9px;border-radius:999px;background:#f2dfcd;color:#874c30;font-size:11px;font-weight:700}
+.voice-call-state::before{content:"";width:7px;height:7px;border-radius:50%;background:#c96639;box-shadow:0 0 0 4px rgba(201,102,57,.12)}
+.voice-call-shell[data-state="listening"] .voice-call-state::before{animation:kakiListenPulse 1.15s ease-in-out infinite}
+.voice-call-transcript-shell{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;padding:11px 14px;border-top:1px solid rgba(202,165,133,.42);background:rgba(255,252,247,.9)}
+.voice-call-transcript{min-height:42px;max-height:92px;overflow:auto;display:grid;gap:4px;color:#68594e;font-size:12px;line-height:1.45}.voice-call-transcript p{margin:0}.voice-call-transcript b{color:#8b4a30}
+.voice-call-actions{display:flex;gap:6px}.voice-call-actions button{padding:7px 9px}.voice-call-interrupt{border-color:#d98258!important;color:#8f4829!important}
+.voice-call-recovery{padding:8px 10px;border:1px solid #dfba9b;border-radius:10px;background:#fff4e7;color:#7d5036;font-size:12px}.voice-call-recovery[hidden]{display:none}
+
+.kaki-board-head{display:grid;gap:4px;margin-bottom:14px}.kaki-board-head small{color:#a2603d;font-size:10px;font-weight:800;letter-spacing:.08em}.kaki-board-head strong{font-size:18px;color:#49362a}
+.kaki-board-body{display:grid;gap:12px;line-height:1.6}.kaki-board-skeleton{margin:0;padding:12px;border-radius:12px;background:linear-gradient(90deg,#efe2d2,#fff8ef,#efe2d2);background-size:220% 100%;animation:kakiBoardSkeleton 1.7s ease-in-out infinite;color:#8b7565}
+.kaki-board-list,.kaki-board-steps,.kaki-board-flow,.kaki-board-timeline{display:grid;gap:8px;margin:0;padding-left:22px}.kaki-board-step{padding:7px 9px;border-radius:10px;transition:background .2s ease,box-shadow .2s ease}.kaki-board-step.is-active{background:#fff1df;box-shadow:inset 3px 0 #d67545}.kaki-board-formula{padding:18px;border-radius:14px;background:#fff;font:700 20px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;text-align:center;color:#5f3d29}.kaki-board-timeline{list-style:none;padding-left:0}.kaki-board-timeline .kaki-board-step{position:relative;padding-left:24px}.kaki-board-timeline .kaki-board-step::before{content:"";position:absolute;left:7px;top:14px;width:7px;height:7px;border-radius:50%;background:#c96b42;box-shadow:0 0 0 4px rgba(201,107,66,.12)}.kaki-board-timeline .kaki-board-step:not(:last-child)::after{content:"";position:absolute;left:10px;top:22px;bottom:-8px;width:1px;background:#d9bda3}
+.kaki-board-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kaki-board-compare section{padding:10px;border:1px solid #e6d5c4;border-radius:12px;background:#fff}.kaki-board-compare p{margin:6px 0 0}.kaki-board-problem,.kaki-board-caption{margin:0;padding:10px;border-radius:10px;background:#fff9f0}.kaki-board-demo{height:160px;display:flex;align-items:flex-end;gap:9px;padding:16px;border-radius:14px;background:#fff}.kaki-board-demo-bar{flex:1;height:var(--demo-value,40%);min-width:18px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#df8a58,#b95834);transition:height .35s ease,filter .2s ease}.kaki-board-demo-bar.is-active{filter:brightness(1.12);box-shadow:0 0 0 3px rgba(201,102,57,.14)}
+
+.tutor-call-invite{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;margin-top:5px;padding:9px 10px;border:1px solid #ead5c0;border-radius:11px;background:#fff9f1}.tutor-call-invite span{display:grid;gap:2px}.tutor-call-invite small{color:#806b5d}.tutor-call-invite-actions{display:flex;gap:5px}.tutor-call-invite-actions button{padding:6px 8px;font-size:12px}
+
+@keyframes kakiBoardEnter{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+@keyframes kakiListenPulse{50%{transform:scale(1.35);opacity:.55}}
+@keyframes kakiBoardSkeleton{50%{background-position:100% 0}}
+@media(max-width:760px){.voice-call-shell{inset:60px 5px 5px;border-radius:15px}.voice-call-head{align-items:flex-start}.voice-call-controls{flex-wrap:wrap;justify-content:flex-end}.voice-call-body,.voice-call-shell[data-teaching="true"] .voice-call-body{display:flex;flex-direction:column;padding:10px;overflow:auto}.voice-call-board{order:2;min-height:230px}.voice-call-avatar-zone{order:1;flex:none}.voice-call-avatar,.voice-call-shell[data-teaching="true"] .voice-call-avatar{width:min(45vw,210px)}.voice-call-bubble,.voice-call-shell[data-teaching="true"] .voice-call-bubble{width:min(92vw,520px);max-height:110px}.voice-call-transcript-shell{grid-template-columns:1fr}.voice-call-actions{justify-content:flex-end}.kaki-board-compare{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.voice-call-body,.voice-call-avatar-zone,.voice-call-avatar,.kaki-board-step,.kaki-board-demo-bar{transition:none!important}.voice-call-shell[data-teaching="true"] .voice-call-board,.voice-call-shell[data-state="listening"] .voice-call-state::before,.kaki-board-skeleton,.voice-call-avatar-image{animation:none!important}}
+
+.kaki-avatar-audio-channel{display:none!important}

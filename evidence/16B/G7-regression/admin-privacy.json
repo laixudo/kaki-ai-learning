@@ -1,0 +1,9 @@
+{
+  "admin_login": "pass",
+  "admin_me": 200,
+  "admin_users": 200,
+  "admin_operations": 200,
+  "admin_me_fields": ["admin_id", "username", "display_name", "role", "is_active"],
+  "forbidden_fields_observed": [],
+  "forbidden_field_checks": ["password_hash", "raw_prompt", "api_key"]
+}

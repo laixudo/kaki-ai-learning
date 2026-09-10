@@ -1,0 +1,4 @@
+{
+  "unexpected_first_party_failures": [],
+  "expected_blockers": ["BLOCKED_BY_SECRET", "BLOCKED_BY_BROWSER_MEDIA"]
+}

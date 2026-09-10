@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "blocker_code": "BLOCKED_BY_SECRET",
+  "keys_rotated": false,
+  "dashscope_configured": false,
+  "llm_configured": false,
+  "provider": "s2v",
+  "avatar_model": "wan2.2-s2v",
+  "script_model": "deepseek-chat"
+}

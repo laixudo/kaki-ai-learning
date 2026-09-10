@@ -1,0 +1,4 @@
+fatal: not a git repository
+Formal delivery directory: C:\Users\wuzbo\KAKI-WINDOWS-FINAL\project
+Commit performed: NO
+Push performed: NO

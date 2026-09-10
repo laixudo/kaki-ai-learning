@@ -1,0 +1,26 @@
+.block {
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 22px;
+  border: 1px dashed rgba(232, 213, 196, 0.9);
+  border-radius: var(--radius-md, 16px);
+  color: var(--muted);
+  background: rgba(255, 250, 244, 0.64);
+  text-align: center;
+}
+
+.block strong {
+  color: var(--ink);
+}
+
+.illustration {
+  width: 132px;
+  height: auto;
+  border-radius: 14px;
+  mix-blend-mode: multiply;
+  user-select: none;
+  pointer-events: none;
+}

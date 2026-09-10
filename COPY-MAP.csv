@@ -1,0 +1,4 @@
+package_path,project_destination,stage,overwrite_policy
+backend/agents/narrative_director/,backend/agents/narrative_director/,Gate 1,must_not_exist_or_match_package
+backend/integrations/narrative_director_adapter.py,backend/integrations/narrative_director_adapter.py,Gate 1,must_not_exist_or_match_package
+backend/tests/narrative_director/,backend/tests/narrative_director/,Gate 1,must_not_overwrite_existing_tests

@@ -1,0 +1,123 @@
+:root {
+  --primary: #ff5a14;
+  --primary-dark: #d8480c;
+  --primary-soft: #fff0e6;
+  --primary-faint: rgba(255, 90, 20, 0.08);
+  --accent-apricot: #f5d8bd;
+  --accent-peach: #fde8dc;
+  --canvas: #fbf7f1;
+  --canvas-warm: #fffaf4;
+  --surface: rgba(255, 253, 249, 0.88);
+  --surface-strong: rgba(255, 254, 251, 0.96);
+  --surface-soft: rgba(250, 244, 237, 0.82);
+  --surface-solid: #fffdf9;
+  --hover: #fff4eb;
+  --ink: #2d211a;
+  --text: #382d27;
+  --muted: #7d7067;
+  --text-soft: #62544b;
+  --text-mute: #9a897d;
+  --line: rgba(139, 105, 80, 0.18);
+  --border: var(--line);
+  --success: #6f8550;
+  --warning: #bc712f;
+  --danger: #b94b39;
+  --paper: var(--surface);
+  --paper-strong: var(--surface-strong);
+  --paper-thinnest: #fff;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --control-height: 40px;
+  --shadow-soft: 0 10px 30px rgba(91, 63, 42, 0.055);
+  --shadow-card: 0 18px 48px rgba(91, 63, 42, 0.075);
+  --shadow-focus: 0 0 0 3px rgba(255, 90, 20, 0.14), 0 10px 28px rgba(255, 90, 20, 0.12);
+  --font-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --seal: #f04418;
+  --pdf: #e94235;
+  --word: #2f75d6;
+  --ppt: #f26a21;
+  --dot-ring: #fffaf4;
+  --text-axis: #8b7b6f;
+  --text-yaxis: #7f7166;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background:
+    radial-gradient(circle at 88% 4%, rgba(255, 135, 72, 0.07), transparent 26%),
+    linear-gradient(180deg, var(--canvas-warm), var(--canvas));
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.ant-card,
+.ant-table-wrapper,
+.ant-modal-content {
+  box-shadow: var(--shadow-soft);
+}
+
+.ant-btn {
+  min-height: var(--control-height);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, var(--primary), #ff7132);
+  box-shadow: 0 8px 20px rgba(255, 90, 20, 0.16);
+}
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector {
+  border-color: var(--line) !important;
+  background: rgba(255, 254, 251, 0.9) !important;
+}
+
+.ant-message {
+  top: 76px !important;
+}
+
+body.notes-route-active .ant-message {
+  top: auto !important;
+  right: 310px;
+  bottom: 72px;
+  left: 548px;
+  width: auto;
+}
+
+::selection {
+  color: var(--ink);
+  background: rgba(255, 144, 88, 0.3);
+}
+
+.ant-empty-description {
+  color: var(--muted);
+}
+
+/* 仅在登录/注册路由下解除全局最小宽度，退出时由 AuthPage 自动移除该 class */
+body.auth-route-active {
+  min-width: 0;
+  overflow-x: hidden;
+}

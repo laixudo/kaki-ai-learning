@@ -1,0 +1,7 @@
+frontend npm run build: EXIT 0
+frontend focused eslint: EXIT 0
+backend pytest tests -q: EXIT 0; 290 passed, 6 skipped
+health-check.ps1: EXIT 0
+smoke-test.ps1: EXIT 0
+modified public JS node --check: EXIT 0
+modified Python py_compile: EXIT 0

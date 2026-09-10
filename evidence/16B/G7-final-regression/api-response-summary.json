@@ -1,0 +1,8 @@
+{
+  "health": 200,
+  "cloud_video_status": "blocked",
+  "cloud_video_blocker": "BLOCKED_BY_SECRET",
+  "owner_mismatch_video_status": 404,
+  "admin_privacy": "pass",
+  "secrets_redacted": true
+}

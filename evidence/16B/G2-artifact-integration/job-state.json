@@ -1,0 +1,10 @@
+{
+  "artifact_id": 56,
+  "initial_status": "queued",
+  "persisted_status": "failed",
+  "error_code": "BLOCKED_BY_SECRET",
+  "retryable": true,
+  "cross_user_status": 404,
+  "video_url": null,
+  "secret_present": false
+}
